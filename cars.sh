@@ -8,20 +8,20 @@ echo "(1) Enter a new car"
 echo "(2) Display your cars"
 echo "(3) Quit the program"
 
-read choice
+read -r choice
 
-while [ $choice -ne "3" ]
+while [ "$choice" -ne "3" ]
 do
 case $choice in
 	"1")
 	echo "Year? "
-	read year
+	read -r year
 	echo "Make? "
-	read makes
+	read -r makes
 	echo "Model? "
-	read model
-	line=$year":"$makes":"$model
-	echo $line >> My_old_cars;;
+	read -r model
+	line="$year:$makes:$model"
+	echo "$line" >> My_old_cars;;
 
 	"2")
 	sort -n My_old_cars;;
@@ -34,5 +34,5 @@ echo "Would you like to: "
 echo "(1) Enter a new car"
 echo "(2) Display your cars"
 echo "(3) Quit the program"
-read choice
+read -r choice
 done
